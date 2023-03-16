@@ -1,0 +1,22 @@
+{
+  "name": "sistema-academico",
+  "version": "1.0.0",
+  "description": "a simples academy system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LuzGone/sistema-academico.git"
+  },
+  "author": "Luiz Gonzaga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuzGone/sistema-academico/issues"
+  },
+  "homepage": "https://github.com/LuzGone/sistema-academico#readme",
+  "dependencies": {
+    "typescript": "^5.0.2"
+  }
+}
