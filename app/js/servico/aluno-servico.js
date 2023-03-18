@@ -1,5 +1,5 @@
-"use strict";
 class AlunoServico {
+    repositorio;
     constructor() {
         this.repositorio = new AlunoRepositorio();
     }

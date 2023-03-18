@@ -1,5 +1,5 @@
-"use strict";
 class AlunoControlador {
+    alunoServico;
     constructor() {
         this.alunoServico = new AlunoServico();
     }
@@ -23,6 +23,7 @@ class AlunoControlador {
         elementoBotaoApagar.addEventListener('click', (event) => {
             this.removerAlunoDaLista(nome);
             event.target.parentElement.remove();
+            //Entender como funciona o possível retorno nulo, por causa do strict true no tsconfig.
         });
         elementoP.appendChild(elementoBotaoApagar);
         document.body.appendChild(elementoP);

@@ -1,5 +1,5 @@
-"use strict";
 class AlunoRepositorio {
+    _alunos;
     constructor() {
         this._alunos = [];
     }
@@ -8,7 +8,7 @@ class AlunoRepositorio {
         return aluno;
     }
     remover(nome) {
-        const indxRemocao = this._alunos.indexOf(aluno => aluno.nome === nome);
+        const indxRemocao = this._alunos.findIndex((aluno) => aluno.nome === nome);
         this._alunos.splice(indxRemocao, 1);
     }
     listar() {
