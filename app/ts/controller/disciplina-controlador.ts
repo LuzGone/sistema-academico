@@ -10,32 +10,47 @@ class DisciplinaControlador {
         const codigoDisciplina = (<HTMLInputElement>document.querySelector("#codigo")).value;
         const disciplina = this.disciplinaServico.inserir(nomeDisciplina, codigoDisciplina);
         if (disciplina) {
-            this.mostrarAlunoNoHTML(nomeDisciplina, codigoDisciplina);
+            this.mostrarDisciplinaNoHTML(nomeDisciplina, codigoDisciplina);
             alert('Disciplina inserida com sucesso!');
         } else {
             alert('Algum erro ocorreu!');
         }
     }
 
-    mostrarAlunoNoHTML(nome:string, codigo:string) {
-        const elementoP = document.createElement("p");
-        elementoP.textContent = `${nome} - ${codigo}`;
+    mostrarDisciplinaNoHTML(nome:string, codigo:string) {
+        const listaDisciplinas = document.getElementById("lista-disciplinas")
+        const disciplina = `
+        <div class="disciplina" id="${codigo}">
+            <p>Nome da Disciplina: ${nome}</p>
+            <p>Código da Disciplina: ${codigo}</p>
+            <p>Lista de Alunos Cadastrados:</p>
+        </div>`
+        listaDisciplinas.insertAdjacentHTML('beforeend',disciplina)
+    }
 
-        const elementoBotaoApagar = document.createElement("button");
-        elementoBotaoApagar.textContent = "X";
-
-        elementoBotaoApagar.addEventListener('click', (event) => {
-                this.removerDisciplinaDaLista(nome);
-                (<HTMLElement>event.target).parentElement.remove();
-                //Entender como funciona o possível retorno nulo, por causa do strict true no tsconfig.
-            }
-        );
-        elementoP.appendChild(elementoBotaoApagar);
-        document.body.appendChild(elementoP);
+    mostrarAlunoNaDisciplinaHTML(codigoDisciplina:string, nomeAluno:string,idadeAluno:number){
+        const div = document.getElementById(codigoDisciplina)
+        const aluno = `
+            <p>${nomeAluno} - ${idadeAluno}</p>
+        `
+        div.insertAdjacentHTML("beforeend",aluno)
     }
 
     removerDisciplinaDaLista(nome:string) {
         this.disciplinaServico.remover(nome);
+    }
+
+    inserirAlunoNaDisciplina(){
+        const nomeAluno = (<HTMLInputElement>document.querySelector("#nome-aluno")).value;
+        const idadeAluno = Number((<HTMLInputElement>document.querySelector("#idade-aluno")).value);
+        const codigoDisciplina = (<HTMLInputElement>document.querySelector("#codigo-disciplina")).value;
+        const aluno = this.disciplinaServico.inserirAlunoNaDisciplina(nomeAluno,idadeAluno,codigoDisciplina);
+        if (aluno) {
+            this.mostrarAlunoNaDisciplinaHTML(codigoDisciplina,nomeAluno,idadeAluno);
+            alert('Aluno inserido com sucesso!');
+        } else {
+            alert('Diciplina Não Encontrada');
+        }
     }
 
 }

@@ -2,7 +2,7 @@ class Disciplina {
     _codigo;
     _nome;
     _alunos = [];
-    constructor(codigo, nome) {
+    constructor(nome, codigo) {
         this._codigo = codigo;
         this._nome = nome;
     }

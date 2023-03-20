@@ -3,7 +3,7 @@ class Disciplina{
     private _nome:string
     private _alunos:Aluno[] = [];
 
-    constructor(codigo:string,nome:string){
+    constructor(nome:string,codigo:string){
         this._codigo = codigo
         this._nome = nome
     }

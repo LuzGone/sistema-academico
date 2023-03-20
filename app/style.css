@@ -1,0 +1,26 @@
+.disciplina{
+    border: 1px solid black;
+    border-radius: 0.625rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;   
+}
+
+#lista-disciplinas{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+
+}
+
+.container{
+    display: flex;
+    gap: 1rem;
+}
+
+#inserir-disciplina,#inserir-aluno-disciplina{
+    border: 1px solid black;
+    border-radius: 0.625rem;
+    padding: 1rem;
+}
+

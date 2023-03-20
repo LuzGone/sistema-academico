@@ -5,14 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-    Nome: <input id="nome"> <br>
-    Idade: <input id="idade"> <br>
-
-    <button onclick="alunoControlador.inserir()">Inserir</button>
-
-    <h1>Listagem de Alunos</h1>
-    <p>Nome - Idade</p>
-
+    <header><h1>Sistema Acadêmico dos Alunos</h1></header>
+    <main>
+        <div id="inserir-aluno">
+            <h2>Inserir Novo Aluno</h2>
+            Nome: <input id="nome"><br>
+            Idade: <input id="idade"> <br>
+            <button onclick="alunoControlador.inserir()">Inserir</button>
+        </div>
+        <div id="lista-alunos">
+            <h1>Listagem de Alunos</h1>
+            <p>Nome - Idade</p>
+        </div>
+    </main>
+    <footer>
+        <a href="disciplina.html">Ir para página das Disciplinas</a>
+    </footer>
     <script src="js/model/aluno.js"></script>
     <script src="js/repositorio/aluno-repositorio.js"></script>
     <script src="js/servico/aluno-servico.js"></script>

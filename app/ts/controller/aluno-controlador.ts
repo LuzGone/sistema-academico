@@ -19,7 +19,8 @@ class AlunoControlador {
 
     mostrarAlunoNoHTML(nome:string, idade:number) {
         const elementoP = document.createElement("p");
-        elementoP.textContent = `${nome} - ${idade}`;
+        const listaAlunos = document.getElementById("lista-alunos")
+        elementoP.textContent = `${nome} - ${idade} - `;
 
         const elementoBotaoApagar = document.createElement("button");
         elementoBotaoApagar.textContent = "X";
@@ -31,7 +32,7 @@ class AlunoControlador {
             }
         );
         elementoP.appendChild(elementoBotaoApagar);
-        document.body.appendChild(elementoP);
+        listaAlunos.appendChild(elementoP);
     }
 
     removerAlunoDaLista(nome:string) {

@@ -9,6 +9,11 @@ class DisciplinaServico {
         return this.repositorio.inserir(disciplina);
     }
 
+    inserirAlunoNaDisciplina(nomeAluno:string,idadeAluno:number, codigoDisciplina:string){
+        const aluno = new Aluno(nomeAluno,idadeAluno)
+        return this.repositorio.inserirAlunoNaDisciplina(aluno,codigoDisciplina);
+    }
+
     remover(nome:string) {
         this.repositorio.remover(nome);
     }

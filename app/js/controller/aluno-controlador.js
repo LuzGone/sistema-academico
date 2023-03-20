@@ -17,7 +17,8 @@ class AlunoControlador {
     }
     mostrarAlunoNoHTML(nome, idade) {
         const elementoP = document.createElement("p");
-        elementoP.textContent = `${nome} - ${idade}`;
+        const listaAlunos = document.getElementById("lista-alunos");
+        elementoP.textContent = `${nome} - ${idade} - `;
         const elementoBotaoApagar = document.createElement("button");
         elementoBotaoApagar.textContent = "X";
         elementoBotaoApagar.addEventListener('click', (event) => {
@@ -26,7 +27,7 @@ class AlunoControlador {
             //Entender como funciona o possível retorno nulo, por causa do strict true no tsconfig.
         });
         elementoP.appendChild(elementoBotaoApagar);
-        document.body.appendChild(elementoP);
+        listaAlunos.appendChild(elementoP);
     }
     removerAlunoDaLista(nome) {
         this.alunoServico.remover(nome);
